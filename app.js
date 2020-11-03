@@ -6,7 +6,6 @@ const mongoose = require('mongoose');
 
 const productRoutes = require('./api/routes/products');
 const orderRoutes = require('./api/routes/orders');
-const userRoutes = require('./api/routes/user');
 
 //for heroku
 mongoose.connect('mongodb+srv://node-shop:'+ 'node-shop' +'@node-rest-shop.di1mf.mongodb.net/'+ 'nodeshop' +'?retryWrites=true&w=majority',{
@@ -43,7 +42,6 @@ app.use((req,res,next)=>{
 //Routes which should handle requests
 app.use('/products',productRoutes);
 app.use('/orders',orderRoutes);
-app.use('/user',userRoutes);
 
 app.use((req,res,next)=>{
     const error = new Error('Not found');
